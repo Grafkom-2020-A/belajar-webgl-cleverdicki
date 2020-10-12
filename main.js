@@ -51,6 +51,7 @@ function main() {
 
     gl.clearColor(0.0, 0.0, 0.0, 1.0);
     gl.clear(gl.COLOR_BUFFER_BIT);
+    gl.viewport(100, 0, canvas.width - 200, canvas.height);
 
     var primitive = gl.TRIANGLE_FAN;
     var offset = 0;
