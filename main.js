@@ -47,7 +47,7 @@ function main() {
     gl.bindBuffer(gl.ARRAY_BUFFER, positionBuffer);
     var aPosition = gl.getAttribLocation(shaderProgram, "a_Position");
     gl.vertexAttribPointer(aPosition, 2, gl.FLOAT, false, 0, 0);
-    gl.enableVertexAttribArray(aPosition);
+    gl.enableVertexAttribArray(aPosition)
 
     gl.clearColor(0.0, 0.0, 0.0, 1.0);
     gl.clear(gl.COLOR_BUFFER_BIT);
