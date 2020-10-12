@@ -8,7 +8,11 @@ function main() {
     */
     var vertices = [-0.5, 0.5, // A Point
         -0.5, -0.5, // B point
-        0.5, -0.5 // C Point
+        -0.5, -0.5, // B point
+        0.5, -0.5, // C Point
+        0.5, -0.5, // C Point
+        -0.5, 0.5 // A Point
+
     ];
 
     var positionBuffer = gl.createBuffer();
@@ -20,7 +24,6 @@ function main() {
     attribute vec2 a_Position;
     void main() {
         gl_Position = vec4(a_Position, 0.0, 1.0);
-        gl_PointSize = 10.0;
     }
     `;
 
@@ -52,9 +55,9 @@ function main() {
     gl.clearColor(0.0, 0.0, 0.0, 1.0);
     gl.clear(gl.COLOR_BUFFER_BIT);
 
-    var primitive = gl.POINTS;
+    var primitive = gl.LINES;
     var offset = 0;
-    var count = 3; // Jumlah vertex yang akan digambar
+    var count = 6; // Jumlah vertex yang akan digambar
     gl.drawArrays(primitive, offset, count)
     gl.drawArrays(gl.POINTS, 0, 1)
 }
