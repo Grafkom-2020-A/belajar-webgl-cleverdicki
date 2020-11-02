@@ -69,13 +69,15 @@ function main() {
     var uDx = gl.getUniformLocation(shaderProgram, 'dx');
     var uDy = gl.getUniformLocation(shaderProgram, 'dy');
     var uDz = gl.getUniformLocation(shaderProgram, 'dz');
-    gl.uniform1f(uDz, dz); // Tidak perlu di dalam loop render, karena dz tidak berubah
+
 
     function render() {
         dx += 0.001;
         dy += 0.001;
+        dz += 0.001;
         gl.uniform1f(uDx, dx);
         gl.uniform1f(uDy, dy);
+        gl.uniform1f(uDz, dz);
         gl.clearColor(0.0, 0.0, 0.0, 1.0);
         gl.clear(gl.COLOR_BUFFER_BIT);
         gl.drawArrays(primitive, offset, count);
