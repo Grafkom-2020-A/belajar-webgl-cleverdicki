@@ -58,6 +58,7 @@ function main() {
     gl.enableVertexAttribArray(aColor);
 
     gl.viewport(100, 0, canvas.height, canvas.height);
+<<<<<<< HEAD
 
     var primitive = gl.TRIANGLES;
     var offset = 0;
@@ -97,6 +98,25 @@ function main() {
             dy += 0.001;
             dz += 0.001;
         }
+=======
+
+    var primitive = gl.TRIANGLES;
+    var offset = 0;
+    var count = 6; // Jumlah verteks yang akan digambar
+
+    var dx = 0;
+    var dy = 0;
+    var dz = 0;
+    var uDx = gl.getUniformLocation(shaderProgram, 'dx');
+    var uDy = gl.getUniformLocation(shaderProgram, 'dy');
+    var uDz = gl.getUniformLocation(shaderProgram, 'dz');
+
+
+    function render() {
+        dx += 0.001;
+        dy += 0.001;
+        dz += 0.001;
+>>>>>>> 8a8c0acd3e23813ca253ed175c3fb7043b52d7cf
         gl.uniform1f(uDx, dx);
         gl.uniform1f(uDy, dy);
         gl.uniform1f(uDz, dz);
